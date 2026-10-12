@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "FlexyWork Resume Automation",
+  "version": "1.0",
+  "description": "Automates resume data extraction and form filling for FlexyWork using ChatGPT.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://dashboard.flexywork.in/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://dashboard.flexywork.in/*"],
+      "js": ["content_flexywork.js"],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+      "js": ["content_chatgpt.js"]
+    }
+  ]
+}

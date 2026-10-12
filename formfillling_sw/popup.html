@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FlexyWork Resume Automation</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>FlexyWork AutoFill</h1>
+        <p>Ensure you have the Resume page open and ChatGPT tab ready.</p>
+        <button id="autoFillBtn" class="primary-btn">Auto Fill Resume</button>
+        <button id="debugExtractBtn" class="secondary-btn" style="margin-top: 10px; background-color: #6c757d;">Debug
+            Extraction (Copy Text)</button>
+        <button id="manualPasteBtn" class="secondary-btn" style="margin-top: 10px;">Paste Text Manually</button>
+        <div id="manualInputArea" style="display: none; width: 100%; margin-top: 10px;">
+            <textarea id="manualText" placeholder="Paste resume text here..." rows="5"
+                style="width: 100%; box-sizing: border-box;"></textarea>
+            <button id="processManualBtn" class="primary-btn" style="margin-top: 5px;">Process Pasted Text</button>
+        </div>
+        <div id="status" class="status-msg"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
